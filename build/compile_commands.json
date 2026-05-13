@@ -1,0 +1,56 @@
+[
+{
+  "directory": "C:/dev/can_Simulator/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe  @CMakeFiles/CANBusSimulator.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\CANBusSimulator.dir\\src\\main.c.obj -c C:\\dev\\can_Simulator\\src\\main.c",
+  "file": "C:/dev/can_Simulator/src/main.c",
+  "output": "CMakeFiles/CANBusSimulator.dir/src/main.c.obj"
+},
+{
+  "directory": "C:/dev/can_Simulator/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe  @CMakeFiles/CANBusSimulator.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\CANBusSimulator.dir\\src\\can.c.obj -c C:\\dev\\can_Simulator\\src\\can.c",
+  "file": "C:/dev/can_Simulator/src/can.c",
+  "output": "CMakeFiles/CANBusSimulator.dir/src/can.c.obj"
+},
+{
+  "directory": "C:/dev/can_Simulator/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe  @CMakeFiles/CANBusSimulator.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\CANBusSimulator.dir\\src\\engine_ecu.c.obj -c C:\\dev\\can_Simulator\\src\\engine_ecu.c",
+  "file": "C:/dev/can_Simulator/src/engine_ecu.c",
+  "output": "CMakeFiles/CANBusSimulator.dir/src/engine_ecu.c.obj"
+},
+{
+  "directory": "C:/dev/can_Simulator/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe  @CMakeFiles/CANBusSimulator.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\CANBusSimulator.dir\\src\\brake_ecu.c.obj -c C:\\dev\\can_Simulator\\src\\brake_ecu.c",
+  "file": "C:/dev/can_Simulator/src/brake_ecu.c",
+  "output": "CMakeFiles/CANBusSimulator.dir/src/brake_ecu.c.obj"
+},
+{
+  "directory": "C:/dev/can_Simulator/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe  @CMakeFiles/CANBusSimulator.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\CANBusSimulator.dir\\src\\dashboard.c.obj -c C:\\dev\\can_Simulator\\src\\dashboard.c",
+  "file": "C:/dev/can_Simulator/src/dashboard.c",
+  "output": "CMakeFiles/CANBusSimulator.dir/src/dashboard.c.obj"
+},
+{
+  "directory": "C:/dev/can_Simulator/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe  @CMakeFiles/CANBusSimulator.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\CANBusSimulator.dir\\src\\logger.c.obj -c C:\\dev\\can_Simulator\\src\\logger.c",
+  "file": "C:/dev/can_Simulator/src/logger.c",
+  "output": "CMakeFiles/CANBusSimulator.dir/src/logger.c.obj"
+},
+{
+  "directory": "C:/dev/can_Simulator/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe  @CMakeFiles/CANBusSimulator.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\CANBusSimulator.dir\\src\\obd2.c.obj -c C:\\dev\\can_Simulator\\src\\obd2.c",
+  "file": "C:/dev/can_Simulator/src/obd2.c",
+  "output": "CMakeFiles/CANBusSimulator.dir/src/obd2.c.obj"
+},
+{
+  "directory": "C:/dev/can_Simulator/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe  @CMakeFiles/CANBusSimulator.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\CANBusSimulator.dir\\src\\menu.c.obj -c C:\\dev\\can_Simulator\\src\\menu.c",
+  "file": "C:/dev/can_Simulator/src/menu.c",
+  "output": "CMakeFiles/CANBusSimulator.dir/src/menu.c.obj"
+},
+{
+  "directory": "C:/dev/can_Simulator/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe  @CMakeFiles/CANBusSimulator.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\CANBusSimulator.dir\\src\\utils.c.obj -c C:\\dev\\can_Simulator\\src\\utils.c",
+  "file": "C:/dev/can_Simulator/src/utils.c",
+  "output": "CMakeFiles/CANBusSimulator.dir/src/utils.c.obj"
+}
+]

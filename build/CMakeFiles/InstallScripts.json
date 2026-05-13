@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/dev/can_Simulator/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
