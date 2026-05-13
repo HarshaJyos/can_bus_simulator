@@ -52,5 +52,41 @@
   "command": "C:\\msys64\\mingw64\\bin\\gcc.exe  @CMakeFiles/CANBusSimulator.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\CANBusSimulator.dir\\src\\utils.c.obj -c C:\\dev\\can_Simulator\\src\\utils.c",
   "file": "C:/dev/can_Simulator/src/utils.c",
   "output": "CMakeFiles/CANBusSimulator.dir/src/utils.c.obj"
+},
+{
+  "directory": "C:/dev/can_Simulator/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe  @CMakeFiles/CANBusSimulator.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\CANBusSimulator.dir\\src\\dbc.c.obj -c C:\\dev\\can_Simulator\\src\\dbc.c",
+  "file": "C:/dev/can_Simulator/src/dbc.c",
+  "output": "CMakeFiles/CANBusSimulator.dir/src/dbc.c.obj"
+},
+{
+  "directory": "C:/dev/can_Simulator/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe  @CMakeFiles/can_tests.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\can_tests.dir\\tests\\test_can.c.obj -c C:\\dev\\can_Simulator\\tests\\test_can.c",
+  "file": "C:/dev/can_Simulator/tests/test_can.c",
+  "output": "CMakeFiles/can_tests.dir/tests/test_can.c.obj"
+},
+{
+  "directory": "C:/dev/can_Simulator/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe  @CMakeFiles/can_tests.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\can_tests.dir\\src\\can.c.obj -c C:\\dev\\can_Simulator\\src\\can.c",
+  "file": "C:/dev/can_Simulator/src/can.c",
+  "output": "CMakeFiles/can_tests.dir/src/can.c.obj"
+},
+{
+  "directory": "C:/dev/can_Simulator/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe  @CMakeFiles/can_tests.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\can_tests.dir\\src\\dbc.c.obj -c C:\\dev\\can_Simulator\\src\\dbc.c",
+  "file": "C:/dev/can_Simulator/src/dbc.c",
+  "output": "CMakeFiles/can_tests.dir/src/dbc.c.obj"
+},
+{
+  "directory": "C:/dev/can_Simulator/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe  @CMakeFiles/can_tests.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\can_tests.dir\\src\\logger.c.obj -c C:\\dev\\can_Simulator\\src\\logger.c",
+  "file": "C:/dev/can_Simulator/src/logger.c",
+  "output": "CMakeFiles/can_tests.dir/src/logger.c.obj"
+},
+{
+  "directory": "C:/dev/can_Simulator/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe  @CMakeFiles/can_tests.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\can_tests.dir\\src\\utils.c.obj -c C:\\dev\\can_Simulator\\src\\utils.c",
+  "file": "C:/dev/can_Simulator/src/utils.c",
+  "output": "CMakeFiles/can_tests.dir/src/utils.c.obj"
 }
 ]

@@ -8,6 +8,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/CANBusSimulator.dir/src/can.c.obj.d"
   "CMakeFiles/CANBusSimulator.dir/src/dashboard.c.obj"
   "CMakeFiles/CANBusSimulator.dir/src/dashboard.c.obj.d"
+  "CMakeFiles/CANBusSimulator.dir/src/dbc.c.obj"
+  "CMakeFiles/CANBusSimulator.dir/src/dbc.c.obj.d"
   "CMakeFiles/CANBusSimulator.dir/src/engine_ecu.c.obj"
   "CMakeFiles/CANBusSimulator.dir/src/engine_ecu.c.obj.d"
   "CMakeFiles/CANBusSimulator.dir/src/logger.c.obj"

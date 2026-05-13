@@ -12,22 +12,34 @@ CMakeFiles/CANBusSimulator.dir/src/menu.c.obj: \
  C:/msys64/mingw64/include/stddef.h \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdbool.h \
  C:/dev/can_Simulator/include/ecu.h C:/dev/can_Simulator/include/can.h \
+ C:/msys64/mingw64/include/pthread.h C:/msys64/mingw64/include/errno.h \
+ C:/msys64/mingw64/include/sys/types.h \
+ C:/msys64/mingw64/include/_mingw_off_t.h \
+ C:/msys64/mingw64/include/process.h \
+ C:/msys64/mingw64/include/corecrt_startup.h \
+ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/limits.h \
+ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/syslimits.h \
+ C:/msys64/mingw64/include/limits.h C:/msys64/mingw64/include/signal.h \
+ C:/msys64/mingw64/include/pthread_signal.h \
+ C:/msys64/mingw64/include/time.h C:/msys64/mingw64/include/sys/timeb.h \
+ C:/msys64/mingw64/include/sec_api/sys/timeb_s.h \
+ C:/msys64/mingw64/include/_timeval.h \
+ C:/msys64/mingw64/include/pthread_time.h \
+ C:/msys64/mingw64/include/pthread_compat.h \
+ C:/msys64/mingw64/include/sched.h \
+ C:/msys64/mingw64/include/pthread_unistd.h \
  C:/dev/can_Simulator/include/dashboard.h \
  C:/dev/can_Simulator/include/obd2.h C:/dev/can_Simulator/include/utils.h \
  C:/dev/can_Simulator/include/logger.h C:/msys64/mingw64/include/stdio.h \
  C:/msys64/mingw64/include/corecrt_stdio_config.h \
- C:/msys64/mingw64/include/_mingw_off_t.h \
  C:/msys64/mingw64/include/swprintf.inl \
  C:/msys64/mingw64/include/sec_api/stdio_s.h \
  C:/msys64/mingw64/include/stdlib.h \
  C:/msys64/mingw64/include/corecrt_wstdlib.h \
- C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/limits.h \
- C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/syslimits.h \
- C:/msys64/mingw64/include/limits.h \
  C:/msys64/mingw64/include/sec_api/stdlib_s.h \
  C:/msys64/mingw64/include/malloc.h \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/mm_malloc.h \
- C:/msys64/mingw64/include/errno.h C:/msys64/mingw64/include/windows.h \
+ C:/msys64/mingw64/include/windows.h \
  C:/msys64/mingw64/include/sdkddkver.h C:/msys64/mingw64/include/excpt.h \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h \
  C:/msys64/mingw64/include/stdarg.h \
@@ -231,7 +243,7 @@ CMakeFiles/CANBusSimulator.dir/src/menu.c.obj: \
  C:/msys64/mingw64/include/rpcnterr.h \
  C:/msys64/mingw64/include/rpcasync.h \
  C:/msys64/mingw64/include/shellapi.h C:/msys64/mingw64/include/winperf.h \
- C:/msys64/mingw64/include/winsock.h C:/msys64/mingw64/include/_timeval.h \
+ C:/msys64/mingw64/include/winsock.h \
  C:/msys64/mingw64/include/_bsd_types.h \
  C:/msys64/mingw64/include/inaddr.h \
  C:/msys64/mingw64/include/psdk_inc/_socket_types.h \

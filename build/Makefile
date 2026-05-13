@@ -47,10 +47,10 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\CMake\bin\cmake.exe"
+CMAKE_COMMAND = C:\msys64\mingw64\bin\cmake.exe
 
 # The command to remove a file.
-RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
+RM = C:\msys64\mingw64\bin\cmake.exe -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -77,57 +77,12 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	"C:\Program Files\CMake\bin\cmake.exe" -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	"C:\Program Files\CMake\bin\cmake.exe" -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -173,6 +128,19 @@ CANBusSimulator/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CANBusSimulator.dir\build.make CMakeFiles/CANBusSimulator.dir/build
 .PHONY : CANBusSimulator/fast
 
+#=============================================================================
+# Target rules for targets named can_tests
+
+# Build rule for target.
+can_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 can_tests
+.PHONY : can_tests
+
+# fast build rule for target.
+can_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\can_tests.dir\build.make CMakeFiles/can_tests.dir/build
+.PHONY : can_tests/fast
+
 src/brake_ecu.obj: src/brake_ecu.c.obj
 .PHONY : src/brake_ecu.obj
 
@@ -203,6 +171,7 @@ src/can.obj: src/can.c.obj
 # target to build an object file
 src/can.c.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CANBusSimulator.dir\build.make CMakeFiles/CANBusSimulator.dir/src/can.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\can_tests.dir\build.make CMakeFiles/can_tests.dir/src/can.c.obj
 .PHONY : src/can.c.obj
 
 src/can.i: src/can.c.i
@@ -211,6 +180,7 @@ src/can.i: src/can.c.i
 # target to preprocess a source file
 src/can.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CANBusSimulator.dir\build.make CMakeFiles/CANBusSimulator.dir/src/can.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\can_tests.dir\build.make CMakeFiles/can_tests.dir/src/can.c.i
 .PHONY : src/can.c.i
 
 src/can.s: src/can.c.s
@@ -219,6 +189,7 @@ src/can.s: src/can.c.s
 # target to generate assembly for a file
 src/can.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CANBusSimulator.dir\build.make CMakeFiles/CANBusSimulator.dir/src/can.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\can_tests.dir\build.make CMakeFiles/can_tests.dir/src/can.c.s
 .PHONY : src/can.c.s
 
 src/dashboard.obj: src/dashboard.c.obj
@@ -244,6 +215,33 @@ src/dashboard.s: src/dashboard.c.s
 src/dashboard.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CANBusSimulator.dir\build.make CMakeFiles/CANBusSimulator.dir/src/dashboard.c.s
 .PHONY : src/dashboard.c.s
+
+src/dbc.obj: src/dbc.c.obj
+.PHONY : src/dbc.obj
+
+# target to build an object file
+src/dbc.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CANBusSimulator.dir\build.make CMakeFiles/CANBusSimulator.dir/src/dbc.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\can_tests.dir\build.make CMakeFiles/can_tests.dir/src/dbc.c.obj
+.PHONY : src/dbc.c.obj
+
+src/dbc.i: src/dbc.c.i
+.PHONY : src/dbc.i
+
+# target to preprocess a source file
+src/dbc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CANBusSimulator.dir\build.make CMakeFiles/CANBusSimulator.dir/src/dbc.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\can_tests.dir\build.make CMakeFiles/can_tests.dir/src/dbc.c.i
+.PHONY : src/dbc.c.i
+
+src/dbc.s: src/dbc.c.s
+.PHONY : src/dbc.s
+
+# target to generate assembly for a file
+src/dbc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CANBusSimulator.dir\build.make CMakeFiles/CANBusSimulator.dir/src/dbc.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\can_tests.dir\build.make CMakeFiles/can_tests.dir/src/dbc.c.s
+.PHONY : src/dbc.c.s
 
 src/engine_ecu.obj: src/engine_ecu.c.obj
 .PHONY : src/engine_ecu.obj
@@ -275,6 +273,7 @@ src/logger.obj: src/logger.c.obj
 # target to build an object file
 src/logger.c.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CANBusSimulator.dir\build.make CMakeFiles/CANBusSimulator.dir/src/logger.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\can_tests.dir\build.make CMakeFiles/can_tests.dir/src/logger.c.obj
 .PHONY : src/logger.c.obj
 
 src/logger.i: src/logger.c.i
@@ -283,6 +282,7 @@ src/logger.i: src/logger.c.i
 # target to preprocess a source file
 src/logger.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CANBusSimulator.dir\build.make CMakeFiles/CANBusSimulator.dir/src/logger.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\can_tests.dir\build.make CMakeFiles/can_tests.dir/src/logger.c.i
 .PHONY : src/logger.c.i
 
 src/logger.s: src/logger.c.s
@@ -291,6 +291,7 @@ src/logger.s: src/logger.c.s
 # target to generate assembly for a file
 src/logger.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CANBusSimulator.dir\build.make CMakeFiles/CANBusSimulator.dir/src/logger.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\can_tests.dir\build.make CMakeFiles/can_tests.dir/src/logger.c.s
 .PHONY : src/logger.c.s
 
 src/main.obj: src/main.c.obj
@@ -371,6 +372,7 @@ src/utils.obj: src/utils.c.obj
 # target to build an object file
 src/utils.c.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CANBusSimulator.dir\build.make CMakeFiles/CANBusSimulator.dir/src/utils.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\can_tests.dir\build.make CMakeFiles/can_tests.dir/src/utils.c.obj
 .PHONY : src/utils.c.obj
 
 src/utils.i: src/utils.c.i
@@ -379,6 +381,7 @@ src/utils.i: src/utils.c.i
 # target to preprocess a source file
 src/utils.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CANBusSimulator.dir\build.make CMakeFiles/CANBusSimulator.dir/src/utils.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\can_tests.dir\build.make CMakeFiles/can_tests.dir/src/utils.c.i
 .PHONY : src/utils.c.i
 
 src/utils.s: src/utils.c.s
@@ -387,7 +390,32 @@ src/utils.s: src/utils.c.s
 # target to generate assembly for a file
 src/utils.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CANBusSimulator.dir\build.make CMakeFiles/CANBusSimulator.dir/src/utils.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\can_tests.dir\build.make CMakeFiles/can_tests.dir/src/utils.c.s
 .PHONY : src/utils.c.s
+
+tests/test_can.obj: tests/test_can.c.obj
+.PHONY : tests/test_can.obj
+
+# target to build an object file
+tests/test_can.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\can_tests.dir\build.make CMakeFiles/can_tests.dir/tests/test_can.c.obj
+.PHONY : tests/test_can.c.obj
+
+tests/test_can.i: tests/test_can.c.i
+.PHONY : tests/test_can.i
+
+# target to preprocess a source file
+tests/test_can.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\can_tests.dir\build.make CMakeFiles/can_tests.dir/tests/test_can.c.i
+.PHONY : tests/test_can.c.i
+
+tests/test_can.s: tests/test_can.c.s
+.PHONY : tests/test_can.s
+
+# target to generate assembly for a file
+tests/test_can.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\can_tests.dir\build.make CMakeFiles/can_tests.dir/tests/test_can.c.s
+.PHONY : tests/test_can.c.s
 
 # Help Target
 help:
@@ -396,12 +424,9 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
-	@echo ... install
-	@echo ... install/local
-	@echo ... install/strip
-	@echo ... list_install_components
 	@echo ... rebuild_cache
 	@echo ... CANBusSimulator
+	@echo ... can_tests
 	@echo ... src/brake_ecu.obj
 	@echo ... src/brake_ecu.i
 	@echo ... src/brake_ecu.s
@@ -411,6 +436,9 @@ help:
 	@echo ... src/dashboard.obj
 	@echo ... src/dashboard.i
 	@echo ... src/dashboard.s
+	@echo ... src/dbc.obj
+	@echo ... src/dbc.i
+	@echo ... src/dbc.s
 	@echo ... src/engine_ecu.obj
 	@echo ... src/engine_ecu.i
 	@echo ... src/engine_ecu.s
@@ -429,6 +457,9 @@ help:
 	@echo ... src/utils.obj
 	@echo ... src/utils.i
 	@echo ... src/utils.s
+	@echo ... tests/test_can.obj
+	@echo ... tests/test_can.i
+	@echo ... tests/test_can.s
 .PHONY : help
 
 

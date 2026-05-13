@@ -7,8 +7,7 @@
 			[
 				{
 					"build" : ".",
-					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-224519fbb871cb814041.json",
+					"jsonFile" : "directory-.-Debug-f6f22219c74102c3da70.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.10"
@@ -17,7 +16,8 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -32,7 +32,8 @@
 					"name" : "CANBusSimulator",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -41,8 +42,15 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "CANBusSimulator::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-CANBusSimulator-Debug-cf167203c30c43c88085.json",
+					"jsonFile" : "target-CANBusSimulator-Debug-f6100b3d2601f16f6d45.json",
 					"name" : "CANBusSimulator",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "can_tests::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-can_tests-Debug-1b01c8f08463672ca66b.json",
+					"name" : "can_tests",
 					"projectIndex" : 0
 				}
 			]

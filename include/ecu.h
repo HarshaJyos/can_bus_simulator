@@ -2,6 +2,7 @@
 #define ECU_H
 
 #include "can.h"
+#include <pthread.h>
 
 /* ECU Identifiers (CAN IDs) */
 #define ECU_ID_ENGINE    0x101
@@ -21,16 +22,18 @@
 typedef struct {
     bool is_running;
     uint32_t last_update_time;
+    pthread_t thread_id;
+    pthread_mutex_t lock;
 } ecu_state_t;
 
 /* Engine ECU Functions */
+void* engine_ecu_thread(void* arg);
 void engine_ecu_init(void);
-void engine_ecu_process(void);
 void engine_ecu_stop(void);
 
 /* Brake ECU Functions */
+void* brake_ecu_thread(void* arg);
 void brake_ecu_init(void);
-void brake_ecu_process(void);
 void brake_ecu_stop(void);
 
 #endif /* ECU_H */

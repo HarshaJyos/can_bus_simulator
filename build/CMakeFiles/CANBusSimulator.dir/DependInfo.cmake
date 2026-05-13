@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/dev/can_Simulator/src/brake_ecu.c" "CMakeFiles/CANBusSimulator.dir/src/brake_ecu.c.obj" "gcc" "CMakeFiles/CANBusSimulator.dir/src/brake_ecu.c.obj.d"
   "C:/dev/can_Simulator/src/can.c" "CMakeFiles/CANBusSimulator.dir/src/can.c.obj" "gcc" "CMakeFiles/CANBusSimulator.dir/src/can.c.obj.d"
   "C:/dev/can_Simulator/src/dashboard.c" "CMakeFiles/CANBusSimulator.dir/src/dashboard.c.obj" "gcc" "CMakeFiles/CANBusSimulator.dir/src/dashboard.c.obj.d"
+  "C:/dev/can_Simulator/src/dbc.c" "CMakeFiles/CANBusSimulator.dir/src/dbc.c.obj" "gcc" "CMakeFiles/CANBusSimulator.dir/src/dbc.c.obj.d"
   "C:/dev/can_Simulator/src/engine_ecu.c" "CMakeFiles/CANBusSimulator.dir/src/engine_ecu.c.obj" "gcc" "CMakeFiles/CANBusSimulator.dir/src/engine_ecu.c.obj.d"
   "C:/dev/can_Simulator/src/logger.c" "CMakeFiles/CANBusSimulator.dir/src/logger.c.obj" "gcc" "CMakeFiles/CANBusSimulator.dir/src/logger.c.obj.d"
   "C:/dev/can_Simulator/src/main.c" "CMakeFiles/CANBusSimulator.dir/src/main.c.obj" "gcc" "CMakeFiles/CANBusSimulator.dir/src/main.c.obj.d"

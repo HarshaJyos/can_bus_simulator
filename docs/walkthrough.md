@@ -1,61 +1,31 @@
-# Beginner's Walkthrough
+# Advanced Walkthrough (v2.0)
 
-## 1. Prerequisites
-Ensure you have the following installed on your Windows machine:
-- **MinGW-w64**: To provide the GCC compiler.
-- **CMake**: To manage the build process.
+## 1. Environment Setup
+- **Linux**: Install `can-utils` and `libpthread-stubs0-dev`.
+- **Windows**: Use MinGW64 and ensure `pthread` is in your compiler path.
 
-### Verifying Tools
-Open your terminal (MinGW64) and type:
+## 2. Compiling the Advanced Project
 ```bash
-gcc --version
-cmake --version
-```
-
-## 2. Setting Up the Project
-Clone or extract the project to your desired directory.
-
-## 3. Building the Project
-Navigate to the project root and execute these commands:
-```bash
-# Create a build directory
+cd /c/dev/can_Simulator
 mkdir build
-
-# Move into it
 cd build
-
-# Generate build files
 cmake .. -G "MinGW Makefiles"
-
-# Compile the code
 cmake --build .
 ```
 
+## 3. Running Unit Tests
+Before running the simulator, verify the core logic:
+```bash
+./can_tests.exe
+```
+This will test frame creation and the **DBC Decoding Engine**.
+
 ## 4. Running the Simulator
-Run the generated executable:
 ```bash
 ./CANBusSimulator.exe
 ```
 
-## 5. Testing Scenarios
-
-### Scenario A: Real-time Monitoring
-1. Select `1` from the main menu.
-2. Observe the RPM and Temperature values changing.
-3. Note how the "Brake Status" changes periodically.
-4. Press `Ctrl+C` to stop.
-
-### Scenario B: Custom Injection
-1. Select `2` from the main menu.
-2. ID: `123`, DLC: `2`, Data: `AA BB`.
-3. Check the logs in the next step.
-
-### Scenario C: Log Verification
-1. Exit the program or minimize it.
-2. Open `logs/can_bus.log` in Notepad.
-3. You will see every frame sent during the simulation with a timestamp.
-
-### Scenario D: Diagnostics
-1. Select `4` from the main menu.
-2. The system will send an OBD-II request for RPM and wait for the response.
-3. Verify the calculated RPM value displayed on screen.
+## 5. What to look for
+- **Concurrency**: Notice that the dashboard updates even while you are in the middle of typing a custom frame ID. This is because ECUs are running in background threads.
+- **DBC Decoding**: The Dashboard now uses `dbc_decode()` to pull signals from raw bits, mimicking how real automotive displays work.
+- **Logging**: Check `logs/can_bus.log` to see the TX/RX history of all threads.

@@ -6,7 +6,7 @@
 
 /**
  * @brief CAN Frame Structure
- * Represents a standard CAN 2.0B frame.
+ * Standardized for both SocketCAN and Virtual Bus.
  */
 typedef struct {
     uint32_t id;          /* 11-bit or 29-bit identifier */
@@ -16,7 +16,7 @@ typedef struct {
 } can_frame_t;
 
 /**
- * @brief Virtual CAN Bus statistics
+ * @brief CAN Bus statistics
  */
 typedef struct {
     uint32_t frames_sent;
@@ -24,19 +24,16 @@ typedef struct {
     uint32_t errors;
 } can_stats_t;
 
-/* CAN Bus Initialization */
-void can_bus_init(void);
+/* CAN Bus Lifecycle */
+bool can_bus_init(const char *iface_name); /* "vcan0" for Linux, "sim" for Windows */
+void can_bus_close(void);
 
-/* Send a frame to the virtual bus */
+/* Send/Receive */
 bool can_send_frame(can_frame_t frame);
+bool can_receive_frame(can_frame_t *frame); /* Non-blocking */
 
-/* Receive a frame from the virtual bus (non-blocking) */
-bool can_receive_frame(can_frame_t *frame);
-
-/* Get bus statistics */
+/* Diagnostics */
 can_stats_t can_get_stats(void);
-
-/* Helper to create a frame */
 can_frame_t can_create_frame(uint32_t id, uint8_t dlc, const uint8_t *data);
 
 #endif /* CAN_H */

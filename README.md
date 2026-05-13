@@ -1,61 +1,65 @@
-# Virtual Automotive CAN Bus Simulator in C
+# Advanced Automotive CAN Bus Simulator (v2.0)
 
-## Project Overview
-This project is a high-fidelity, software-simulated CAN (Controller Area Network) Bus environment designed for automotive software development training and testing. It simulates multiple Electronic Control Units (ECUs) communicating over a virtual bus, supporting standard CAN frames, OBD-II diagnostics, and system logging.
+## 🚀 Recent Upgrades
+This project has been upgraded to meet industry-level automotive software standards.
 
-## Key Features
-- **Virtual CAN Bus Layer**: Broadcast-style message handling with ID and DLC support.
-- **Engine ECU Simulation**: Real-time simulation of RPM, Coolant Temperature, and Throttle Position.
-- **Brake ECU Simulation**: Simulates braking events, ABS activation, and hydraulic pressure.
-- **Interactive Dashboard**: ASCII-based terminal UI showing live vehicle telemetry.
-- **OBD-II Diagnostics**: Support for PID requests (0x01) and responses.
-- **System Logger**: All bus traffic is recorded with timestamps in `logs/can_bus.log`.
-- **Error Detection**: Basic detection of invalid DLC and bus overflows.
+1.  **Hardware Abstraction Layer (HAL)**:
+    -   Now supports **Linux SocketCAN** natively.
+    -   Fall-back to a Virtual Bus for Windows simulation.
+2.  **Multithreading**:
+    -   Each ECU (Engine, Brake) runs in its own **pthread**, simulating true concurrent hardware logic.
+3.  **DBC-Lite Engine**:
+    -   Implemented a signal decoding engine that uses start-bits, scale factors, and offsets.
+4.  **Unit Testing**:
+    -   Added a testing suite in `tests/` to ensure frame reliability and decoding accuracy.
+5.  **Clean Architecture**:
+    -   Decoupled simulation logic from UI and bus drivers.
 
-## Project Architecture
-The simulator uses a modular architecture:
-- `can.c`: Core bus logic and synchronization.
-- `ecu.c` files: Domain-specific simulation logic.
-- `dashboard.c`: Visualization layer.
-- `menu.c`: User interaction and system control.
+## 🏗️ System Architecture
+```mermaid
+graph TD
+    User([User]) <--> Menu[Menu System]
+    Menu --> ThreadSim[Simulation Control]
+    
+    subgraph "Concurrent ECUs"
+        Engine[Engine Thread]
+        Brake[Brake Thread]
+    end
+    
+    Engine -- "CAN Frame" --> Bus[CAN Bus HAL]
+    Brake -- "CAN Frame" --> Bus
+    
+    Bus <--> SocketCAN[Linux SocketCAN]
+    Bus <--> VirtBus[Windows Virtual Bus]
+    
+    Bus --> Dash[Dashboard]
+    Dash --> DBC[DBC Decoding Engine]
+    Dash --> UI[Terminal UI]
+```
 
-## Build Requirements
-- **OS**: Windows (MinGW64 recommended)
-- **Compiler**: GCC (C11 support)
-- **Build System**: CMake 3.10+
-
-## Compilation Instructions
-Open your MinGW64 terminal and run:
+## 🛠️ Build & Test
+### Compile
 ```bash
-mkdir build
-cd build
-cmake ..
+mkdir build; cd build
+cmake .. -G "MinGW Makefiles"
 cmake --build .
 ```
 
-## Running the Simulator
-After building, run the executable:
+### Run Tests
+```bash
+./can_tests.exe
+```
+
+### Run Simulator
 ```bash
 ./CANBusSimulator.exe
 ```
 
-## Usage
-1. **Start Simulation**: Watch live data flowing between ECUs on the dashboard.
-2. **Send Custom Frame**: Manually inject CAN frames into the bus.
-3. **OBD-II Test**: Run a diagnostic routine to query specific PIDs.
-4. **View Logs**: Check the generated log files for historical analysis.
+## 📂 Project Structure
+- `include/`: API and Structure definitions.
+- `src/`: ECU implementations and core drivers.
+- `tests/`: Automated unit tests.
+- `docs/`: Walkthroughs and architectural deep-dives.
 
-## Project Structure
-```text
-CAN-Bus-Simulator/
-├── include/       # Header files
-├── src/           # Implementation files
-├── docs/          # Detailed documentation
-├── logs/          # Generated CAN logs
-└── CMakeLists.txt # Build configuration
-```
-
-## Future Improvements
-- J1939 Protocol support.
-- Graphical UI using raylib or SDL2.
-- Network socket support for multi-process simulation.
+## 📜 License
+Educational use - Perfect for Engineering Portfolios.
